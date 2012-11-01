@@ -47,21 +47,21 @@ namespace :deploy do
 
   desc "Deployment Logger: Kicked Off"
   task :record_start do
-    DeployMailer.send_notification("SheServices [#{rails_env}] Deployment Started", "A deployment to SheServices #{rails_env} has been started at #{Time.now}.", recipients.join(","))
+    DeployMailer.send_notification("RomneyRating [#{rails_env}] Deployment Started", "A deployment to RomneyRating #{rails_env} has been started at #{Time.now}.", recipients.join(","))
   end
 
   desc "Deployment Logger: Record Success"
   task :record_success do
-    DeployMailer.send_notification("SheServices [#{rails_env}] Deployment Successful", "The deployment to SheServices #{rails_env} successfully completed at #{Time.now}.", recipients.join(","))
+    DeployMailer.send_notification("RomneyRating [#{rails_env}] Deployment Successful", "The deployment to RomneyRating #{rails_env} successfully completed at #{Time.now}.", recipients.join(","))
   end
 
   desc "Deployment Logger: Record Failure"
   task :record_failure do
-    DeployMailer.send_notification("SheServices [#{rails_env}] Deployment Failed", "The deployment to SheServices #{rails_env} failed at #{Time.now}.", recipients.join(","))
+    DeployMailer.send_notification("RomneyRating [#{rails_env}] Deployment Failed", "The deployment to RomneyRating #{rails_env} failed at #{Time.now}.", recipients.join(","))
   end
 
   task :record_reboot do
-    DeployMailer.send_notification("SheServices [#{rails_env}] Rebooted", "The server for SheServices #{rails_env} was rebooted at #{Time.now}.", recipients.join(","))
+    DeployMailer.send_notification("RomneyRating [#{rails_env}] Rebooted", "The server for RomneyRating #{rails_env} was rebooted at #{Time.now}.", recipients.join(","))
   end
 end
 
@@ -365,7 +365,7 @@ end
 namespace :rvm do
   namespace :ruby do
     task :install, :roles => :app do
-      run "rvm install ruby-1.9.3-p125 && rvm gemset create she-web"
+      run "rvm install ruby-1.9.3-p125 && rvm gemset create romneyrate-web"
     end
   end
 end

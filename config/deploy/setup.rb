@@ -1,4 +1,4 @@
-set :whenever_command, "bundle exec whenever"
+#set :whenever_command, "bundle exec whenever"
 def mailer(options)
   Mail.defaults do
     delivery_method :smtp, options

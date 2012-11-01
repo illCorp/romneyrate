@@ -1,7 +1,7 @@
-require "whenever/capistrano"
+#require "whenever/capistrano"
 set :rails_env, "staging"
-set :whenever_environment, defer { rails_env }
-set(:whenever_command) { "RAILS_ENV=#{rails_env} bundle exec whenever" }
+#set :whenever_environment, defer { rails_env }
+#set(:whenever_command) { "RAILS_ENV=#{rails_env} bundle exec whenever" }
 set :branch, "master"
 set :recipients, %w(sean@meeps.com mranauro@meeps.com)
 

@@ -18,8 +18,8 @@ set -e
 # since nginx and unicorn accept the same signals
 
 # Feel free to change any of the following variables for your app:
-APP_ROOT=/home/ubuntu/romneyrating/current
-PID=/home/ubuntu/romneyrating/shared/pids/unicorn.pid
+APP_ROOT=/home/ubuntu/romneyrate/current
+PID=/home/ubuntu/romneyrate/shared/pids/unicorn.pid
 ENV=staging
 CMD="cd $APP_ROOT; bundle exec unicorn -D -E $ENV -c $APP_ROOT/config/unicorn.rb"
 
@@ -36,7 +36,7 @@ oldsig () {
 }
 
 workersig () {
-  workerpid="/home/ubuntu/romneyrating/shared/pids/unicorn.$2.pid"
+  workerpid="/home/ubuntu/romneyrate/shared/pids/unicorn.$2.pid"
   
   test -s "$workerpid" && kill -$1 `cat $workerpid`
 }
