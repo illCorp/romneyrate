@@ -1,8 +1,8 @@
 files: 
-  - /home/ubuntu/meeps/shared/log/production.log
-  - /home/ubuntu/meeps/shared/log/reaper.log
-  - /home/ubuntu/meeps/shared/log/zmq_redis_broker.log
-  - /home/ubuntu/meeps/shared/log/socketio_redis.log
+  - /home/ubuntu/romneyrating/shared/log/production.log
+  - /home/ubuntu/romneyrating/shared/log/reaper.log
+  - /home/ubuntu/romneyrating/shared/log/zmq_redis_broker.log
+  - /home/ubuntu/romneyrating/shared/log/socketio_redis.log
 
 destination:
   host: logs.papertrailapp.com

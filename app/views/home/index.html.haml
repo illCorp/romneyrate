@@ -27,9 +27,11 @@
       .label of your friends like Mitt Romney
 
     #how_well_know
-      .label So...Um...How well do you know these 7 Friends?
-      .thumbnails
-        %img.thumb{:src => "", :width => 50, :height => 50}
+      .label 
+        = "So...Um...How well do you know these #{@friend_likes.count} Friends?"
+      #thumbnails
+        -@friend_likes.each do |friend|
+          %img.thumb{:src => friend['pic_big'], :width => 50, :height => 50}
 
     #sharing
       .label Share Your Romney Rate
