@@ -52,6 +52,7 @@
   height: 110px;
   width: 100%;
   position: relative;
+  margin-top: 10px;
   
   .percent_box, .label {
     position: absolute;
@@ -96,5 +97,15 @@
 #share .label {
   border-bottom: 1px solid white;
   padding-bottom: 6px;
+}
 
+#romney_fans_div, #total_friends_div {
+  background-color: rgba(255,255,255,0.7);
+  width: 0px;
+  height: 100%;
+  margin: 4px 0 0 0;
+}
+
+#total_friends .label {
+  color: white;
 }
