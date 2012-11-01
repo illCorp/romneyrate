@@ -64,7 +64,7 @@
     font-size: 6em;
  background-color: white;
  display: inline-block;
- width: 300px;
+ width: 340px;
  
  .percent {
    margin: 8px;
@@ -94,6 +94,7 @@
   padding-left: 16px;
   position: absolute;
   top: 0;
+  left: 336px;
   
   .label {
     border-bottom: 1px solid white;
@@ -101,6 +102,7 @@
     left: 4px;
     font-size: 1em;
     display: block;
+    width: 234px;
   }
 }
 
@@ -114,10 +116,25 @@
   text-transform: uppercase;
 }
 
+#how_well_know {
+  width: 670px;
+  height: 320px;
+}
+
+#thumbnails {
+  overflow: auto;
+  width: 100%;
+  height: 275px;
+  
+  .thumb {
+    padding: 2px;
+  }
+}
+
 #how_well_know .label {
   border-bottom: 1px solid white;
   padding-bottom: 6px;
-  margin-top: 50px;
+  margin-top: 7px;
 }
 
 #romney_fans_div, #total_friends_div {
@@ -154,12 +171,12 @@ img.thumb {
 }
 
 #sharing .share.left {
-  margin-left: 10px;
+  margin-left: 2px;
 }
 
 #sharing .share.right {
   left: 100px;
-  
+  display: none;
 }
 
 #sharing .share li {

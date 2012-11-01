@@ -34,8 +34,8 @@
               .fb-like{:data => {:href=>"http://www.whatsmyromneyrate.com/", :send=>"false", :width=>"450", :'show-faces'=>"false", :layout => 'button_count'}}
             %li
               %a.twitter-share-button{:href=>"https://twitter.com/share", :data => {:lang=>"en"}} Tweet
-            :plain
-              <li><g:plus action="share" annotation="bubble"></g:plus></li>
+            /:plain
+            /<li><g:plus action="share" annotation="bubble"></g:plus></li>
           %ul.share.right
             :plain
               <li><script type="IN/Share" data-url="http://www.whatsmyromneyrate.com/"></script></li>
@@ -60,3 +60,12 @@
 
 -content_for :end_scripts do
   =javascript_include_tag '/assets/home/index.js'
+  :plain
+    <script type="text/javascript">
+        var tumblr_button2 = document.createElement("a");
+        tumblr_button2.setAttribute("href", "http://www.tumblr.com/share/link?url=" + encodeURIComponent(page_url) + "&name=" + encodeURIComponent(page_name) + "&description=" + encodeURIComponent(page_description));
+        tumblr_button2.setAttribute("title", "Share on Tumblr");
+        tumblr_button2.setAttribute("style", "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+        tumblr_button2.innerHTML = "Share on Tumblr";
+        document.getElementById("tumblr_button_page").appendChild(tumblr_button2);
+    </script>
