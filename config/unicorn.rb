@@ -12,10 +12,10 @@ timeout 60
 
 working_directory APP_ROOT
 
-listen '/home/ubuntu/she-services/shared/sockets/unicorn.sock', :backlog => 2048
+listen '/home/ubuntu/romneyrate/shared/sockets/unicorn.sock', :backlog => 2048
 
-pid '/home/ubuntu/she-services/shared/pids/unicorn.pid'
-old_pid = '/home/ubuntu/she-services/shared/pids/unicorn.pid.oldbin'
+pid '/home/ubuntu/romneyrate/shared/pids/unicorn.pid'
+old_pid = '/home/ubuntu/romneyrate/shared/pids/unicorn.pid.oldbin'
 stderr_path APP_ROOT + "/log/unicorn.stderr.log"
 stdout_path APP_ROOT + "/log/unicorn.stdout.log"
 
