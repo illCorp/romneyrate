@@ -1,0 +1,25 @@
+development:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: she-development
+test:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: she-test
+szehnder:
+  # access_key_id: 1NH4REE5ZY3QQ9R2G3G2
+  #  secret_access_key: hr2OkSmyJTuw+wfapTZj5XudzqBmSdkEwHZyflmb
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: she-szehnder
+staging:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: she-staging
+  s3_protocol: https
+production:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: she-production
+  s3_protocol: https
+

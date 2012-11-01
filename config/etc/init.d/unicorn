@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# File: /etc/init.d/unicorn
+
+### BEGIN INIT INFO
+# Provides:          Unicorn Rails Server
+# Required-Start:    $remote_fs $syslog $network $local_fs
+# Required-Stop:     $remote_fs $syslog $network $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
+### END INIT INFO
+
+set -u
+set -e
+# Example init script, this can be used with nginx, too,
+# since nginx and unicorn accept the same signals
+
+# Feel free to change any of the following variables for your app:
+APP_ROOT=/home/ubuntu/she-services/current
+PID=/home/ubuntu/she-services/shared/pids/unicorn.pid
+ENV=staging
+CMD="cd $APP_ROOT; bundle exec unicorn -D -E $ENV -c $APP_ROOT/config/unicorn.rb"
+
+old_pid="$PID.oldbin"
+
+cd $APP_ROOT || exit 1
+
+sig () {
+	test -s "$PID" && kill -$1 `cat $PID`
+}
+
+oldsig () {
+	test -s $old_pid && kill -$1 `cat $old_pid`
+}
+
+workersig () {
+  workerpid="/home/ubuntu/she-services/shared/pids/unicorn.$2.pid"
+  
+  test -s "$workerpid" && kill -$1 `cat $workerpid`
+}
+
+case $1 in
+start)
+	sig 0 && echo >&2 "Already running" && exit 0
+	sudo su - ubuntu -c "$CMD" >> $APP_ROOT/log/unicorn_init.log 2>&1
+        echo "done."
+	;;
+stop)
+	sig QUIT && exit 0
+	echo >&2 "Not running"
+	;;
+force-stop)
+	sig TERM && exit 0
+	echo >&2 "Not running"
+	;;
+restart|reload)
+	sig HUP && echo reloaded OK && exit 0
+	echo >&2 "Couldn't reload, starting '$CMD' instead"
+	$CMD
+	;;
+upgrade)
+	sig USR2 && exit 0
+	echo >&2 "Couldn't upgrade, starting '$CMD' instead"
+	$CMD
+	;;
+kill_worker)
+	workersig QUIT $2 && exit 0
+	echo >&2 "Worker not running"
+	;;
+rotate)
+        sig USR1 && echo rotated logs OK && exit 0
+        echo >&2 "Couldn't rotate logs" && exit 1
+        ;;
+*)
+	echo >&2 "Usage: $0 <start|stop|restart|upgrade|rotate|force-stop>"
+	exit 1
+	;;
+esac

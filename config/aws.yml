@@ -1,0 +1,22 @@
+# Fill in your AWS Access Key ID and Secret Access Key
+# http://aws.amazon.com/security-credentials
+development:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: uMBKTuITHNImJSs+XUoioT7TH7fQs4+H4DC29Dtm
+  bucket: romneyrate-development
+szehnder:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: romneyrate-szehnder
+staging:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: romneyrate-staging
+production:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: romneyrate-production
+test:
+  access_key_id: AKIAJN4RDOCS3ONTP2LA
+  secret_access_key: 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
+  bucket: romneyrate-test

@@ -1,0 +1,9 @@
+/home/ubuntu/meeps/shared/log/*.log {
+    compress
+    copytruncate
+    daily
+    dateext
+    delaycompress
+    missingok
+    rotate 60
+}

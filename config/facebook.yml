@@ -1,0 +1,12 @@
+# Fill in your AWS Access Key ID and Secret Access Key
+# http://aws.amazon.com/security-credentials
+development:
+  app_id: 167465176727032
+szehnder:
+  app_id: 167465176727032
+staging:
+  app_id: 167465176727032
+production:
+  app_id: 167465176727032
+test:
+  app_id: 11111

@@ -42,6 +42,10 @@ module Romneyrate
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
+    config.generators do |g|
+      g.template_engine :haml
+    end
+    
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
@@ -58,5 +62,12 @@ module Romneyrate
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.assets.initialize_on_precompile = true
+    config.assets.precompile = ['*.js', '*.css', '*.jpg', '*.png', '*.gif', '*.ico', '*.swf', '*.mp3', '*.otf']
+    config.assets.precompile += %w(/assets/admin/*.js)
+    config.assets.precompile += %w(/assets/flash/*.swf)
+    config.assets.precompile += %w(/assets/audio/*.mp3)
+    config.assets.precompile += %w(/assets/fonts/*.otf)
   end
 end

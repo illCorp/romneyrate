@@ -1,32 +1,4 @@
 Romneyrate::Application.routes.draw do
-
-  root to: 'home#index'  
- 
-  resources :facebook, :only => [] do
-    collection do
-      get 'finalize'
-      delete 'logout'
-      get 'logout'
-    end
-  end
-  
-  namespace :api do
-    namespace :v1 do
-      resources :users, :only => [:index, :show, :create, :update] do
-        member do
-          get "facebook_friend_list"
-        end
-        collection do 
-          get 'search'
-          post 'create_from_facebook'
-        end
-      end
-    end
-  end
-  
-  
-   match '/home/:action', :controller => 'home'
-   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

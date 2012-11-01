@@ -1,3 +1,10 @@
+common: &common
+  adapter: postgresql
+  username: sean
+  password: ch1ck3n # from psql setup, see Postgresql 
+  schema_search_path: public
+  pool: 5
+  
 # SQLite version 3.x
 #   gem install sqlite3
 #
@@ -9,6 +16,18 @@ development:
   pool: 5
   timeout: 5000
 
+szehnder:
+  <<: *common
+  username: illco-admin
+  password: ch1ck3n
+  database: romneyrate-szehnder
+  host: localhost
+  
+staging:
+  <<: *common
+  database: romneyrate-staging
+  host: ec2-184-72-145-22.compute-1.amazonaws.com
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -19,7 +38,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  <<: *common
+  database: romneyrate-production
+  host: ec2-184-72-145-22.compute-1.amazonaws.com
+

@@ -1,0 +1,100 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require_self
+*/
+ 
+#text_container {
+ text-transform:uppercase;
+ color: white;
+}
+
+#nicework {
+  border-bottom: 1px solid white;
+  padding-bottom: 4px;
+}
+
+.bar_block {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 50px;
+  
+  .count, .label {
+    display: inline-block;
+    position: absolute;
+  }
+  
+  .count {
+    color:  #093a65;    
+    left: 12px;
+    top: 8px;
+    font-size: 1.7em;
+  }
+  
+  .label {
+    right: 6px;
+    top: 17px;
+    font-size: 0.7em;
+  }
+}
+
+
+.rate_block {
+  display: block;
+  height: 110px;
+  width: 100%;
+  position: relative;
+  
+  .percent_box, .label {
+    position: absolute;
+  }
+  
+  .percent_box {
+    left: 0;
+    top: 0;
+    font-size: 4em;
+ background-color: white;
+  }
+  
+  .percent {
+    margin: 8px;
+    color:  #093a65;    
+    font-weight: bold;
+       
+  }
+  
+  .label {
+    left: 0;
+    top: 75px;
+    font-size: 0.4em;
+  }
+}
+
+#hey_mitt_check_math {
+  position: absolute;
+  top: 170px;
+  left: 480px;
+  color: white;
+  font-size: 0.4em;
+  width: 100px;
+  text-transform: uppercase;
+}
+
+#how_well_know .label {
+  border-bottom: 1px solid white;
+  padding-bottom: 6px;
+}
+
+#share .label {
+  border-bottom: 1px solid white;
+  padding-bottom: 6px;
+
+}

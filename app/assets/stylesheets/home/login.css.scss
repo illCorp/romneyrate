@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+ 
+ .main_label {
+   background-color: white;
+   color: #093a65;
+   padding: 8px;
+   font-size: 2em;
+   font-weight: bold;
+   text-transform:uppercase;
+ }
+ 
+
+ 
+ #friends_like, #question_mark {
+   display: inline-block;
+   margin-top: 20px;
+ }
+ 
+ #description {
+   margin-top: 40px;
+   color: white;
+   margin-bottom: 40px
+ }
+
+ #login_button {
+   background-color: white;
+   background-image: url('/assets/facebook-icon.png');
+   background-repeat: no-repeat;
+   background-position: 8px 8px;
+   border-radius: 10px;
+   padding: 10px;
+   width: 300px;
+   height: 50px;
+   font-size: 1.1em;
+   
+   .label_container {
+     padding-top: 15px;
+     margin-left: 60px;
+   }
+   
+   .first_part {
+     color: #093a65;
+   }
+   .second_part {
+     color: red;
+   }
+ }
+ 
+ #login_subtext {
+   margin-top: 4px;
+   width: 300px;
+   color: white;
+   font-size: 0.8em;
+   text-align: center;
+ }

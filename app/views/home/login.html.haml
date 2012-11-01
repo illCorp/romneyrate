@@ -1,0 +1,38 @@
+-content_for :head_scripts do
+  =stylesheet_link_tag '/assets/home/shared.css'
+  =stylesheet_link_tag '/assets/home/login.css'
+  
+
+=render :partial => 'header'
+
+#main_container
+  #background
+  #text_container
+    #what_percent
+      %span.main_label
+        What Percentage of Your
+    #friends_like
+      %span.main_label
+        Friends "Like" Mitt Romney
+    #question_mark
+      %span.main_label ?
+
+    #description 
+      Friends probably shouldn't let friends "like" Mitt Romney.
+      %br
+      Stopping it starts with understanding the size of the problem.
+      %p Click below and hold your breath while we do some long division.
+  
+
+    .login_container
+      #login_button
+        .label_container
+          %span.first_part Calculate your
+          %span.second_part Romney Rate
+      #login_subtext (remember, lower is better)
+
+=render :partial => 'footer'
+#fb-root
+
+-content_for :end_scripts do
+  =javascript_include_tag '/assets/home/login.js'
