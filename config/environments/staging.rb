@@ -20,8 +20,11 @@ Romneyrate::Application.configure do
 
   config.perform_caching = true
   config.action_controller.perform_caching = true
-  #config.cache_store = :dalli_store, 'dev-cache.vzvdas.0001.use1.cache.amazonaws.com:11211',
-   #   { :namespace => "romneyrate_staging", :expires_in => 1.day, :compress => true }
+
+  config.after_initialize do
+    config.cache_store = :dalli_store, 'dev-cache.vzvdas.0001.use1.cache.amazonaws.com:11211',
+      { :namespace => "romneyrate_staging", :expires_in => 1.day, :compress => true }
+  end
 
   # Specifies the header that your server uses for sending files
   # (comment out if your front-end server doesn't support this)
