@@ -48,10 +48,11 @@
 
 
 .rate_block {
-  display: block;
-  height: 110px;
+  display: inline-block;
   position: relative;
   margin-top: 10px;
+  width: 294px;
+  height: 140px;
   
   .percent_box, .label {
     position: absolute;
@@ -60,40 +61,46 @@
   .percent_box {
     left: 0;
     top: 0;
-    font-size: 4em;
+    font-size: 6em;
  background-color: white;
-  }
-  
-  .percent {
-    margin: 8px;
-    color:  #093a65;    
-    font-weight: bold;
-       
+ display: inline-block;
+ width: 300px;
+ 
+ .percent {
+   margin: 8px;
+   color:  #093a65;    
+   font-weight: bold;
+    
+ }
   }
   
   .label {
     left: 0;
-    top: 75px;
+    top: 130px;
     font-size: 0.4em;
   }
-  border: 1px solid green;
+}
+
+.rating_and_sharing {
+  display: block;
+  position: relative;
 }
 
 #sharing {
   display: inline-block;
+  width: 250px;
+  height: 140px;
+  padding-top: 22px;
+  padding-left: 16px;
   position: absolute;
-  right: 0;
-  top: 10px;
-   
-  width: 300px;
-  height: 24px;
+  top: 0;
   
   .label {
     border-bottom: 1px solid white;
-    display: block;
     top: 0;
-    left: 0;
+    left: 4px;
     font-size: 1em;
+    display: block;
   }
 }
 
@@ -110,11 +117,7 @@
 #how_well_know .label {
   border-bottom: 1px solid white;
   padding-bottom: 6px;
-}
-
-#share .label {
-  border-bottom: 1px solid white;
-  padding-bottom: 6px;
+  margin-top: 50px;
 }
 
 #romney_fans_div, #total_friends_div {
@@ -134,5 +137,35 @@
 
 img.thumb {
   display: inline-block;
+}
+
+#sharing .share_buttons {
+  position: relative;
+}
+
+#sharing .share {
+  margin-top: 29px;
+  display: inline-block;
+  list-style-type: none;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  padding-left: 0;
+}
+
+#sharing .share.left {
+  margin-left: 10px;
+}
+
+#sharing .share.right {
+  left: 100px;
+  
+}
+
+#sharing .share li {
+  display: block;
+  padding: 1px;
+  margin: 2px;
+  margin-left: 0px;
 }
 
