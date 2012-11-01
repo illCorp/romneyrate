@@ -9,6 +9,8 @@ class HomeController < ApplicationController
     session[:last_seen] = Time.now
     if (facebook_authorized?)
       current_user = facebook_user
+      @friend_likes = facebook_friend_likes
+      @total_friends = facebook_friend_count
       redirect_to :action => :login if current_user.nil?
     end
     @current_user = current_user

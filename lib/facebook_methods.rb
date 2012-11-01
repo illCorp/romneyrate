@@ -34,6 +34,22 @@ module FacebookMethods
     @u
   end
   
+  def facebook_friend_count
+    user = facebook_user
+    if user
+      begin
+        friend_ids = facebook_client.get_connections("me", "friends").collect {|item| item['id']}
+        return friend_ids.length
+      rescue Koala::Facebook::APIError => e
+        session['facebook_access_token'] = nil
+        session[:last_seen] = nil
+        redirect_to '/'
+        logger.error e
+      end
+    end
+    return 0
+  end
+  
   def facebook_friends
     user = facebook_user
     if user
@@ -54,6 +70,32 @@ module FacebookMethods
         redirect_to '/'
         logger.error e
       end
+    end
+    return []
+  end
+  
+  def facebook_friend_likes
+    user = facebook_user
+    if user
+      begin
+        
+        query = "SELECT first_name, last_name, pic_big FROM user WHERE uid IN(
+        	SELECT uid FROM page_fan WHERE page_id='21392801120' AND uid IN (
+        		SELECT uid2 FROM friend WHERE uid1 = me()
+        	)
+        )"
+        results = facebook_client.fql_query(query)
+        #results = []
+        friends = results.collect do |row|
+          row
+        end
+        return friends
+      rescue Koala::Facebook::APIError => e
+        session['facebook_access_token'] = nil
+        session[:last_seen] = nil
+        redirect_to '/'
+        logger.error e
+      end 
     end
     return []
   end

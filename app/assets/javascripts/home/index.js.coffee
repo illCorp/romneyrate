@@ -9,7 +9,7 @@ RomneyIndex =
     $('#logout').click((event)->
       FacebookLogin.logout()
     )
-    this.updateBarGraph(90,101)
+    this.updateBarGraph(window.FansOfRomney.length,window.TotalFriendCount)
   updateBarGraph: (romney_fans, total_friends)->
     console.log("updateBarGraph...");
     pct = 100*romney_fans/total_friends
