@@ -2,6 +2,7 @@
 #= require jquery_ujs
 #= require plugins/jquery.color
 #= require facebook
+#= require plugins/jquery.center
 
 RomneyIndex =
   total_friends_rect: null
@@ -34,6 +35,10 @@ RomneyIndex =
     jQuery({someValue: 0}).animate({someValue: romney_fans}, {duration: 3000, easing: 'swing', step: ->
       $('#romney_fans .count').text("#{Math.ceil(this.someValue)}")
     })
+    
+    share_center_y = $('#footer .share').height()/2
+    
+    #$('#footer .share').children().center()
     
 
     

@@ -25,6 +25,8 @@
       .percent_box 
         .percent#percent_label 0%
       .label of your friends like Mitt Romney
+      #sharing
+        .label Share Your Romney Rate
 
     #how_well_know
       .label 
@@ -33,8 +35,7 @@
         -@friend_likes.each do |friend|
           %img.thumb{:src => friend['pic_big'], :width => 50, :height => 50}
 
-    #sharing
-      .label Share Your Romney Rate
+    
       
   #hey_mitt_check_math Hey Mitt, Check our Math, it adds up!
       
