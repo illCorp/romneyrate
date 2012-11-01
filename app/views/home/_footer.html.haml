@@ -23,4 +23,12 @@
         tumblr_button.innerHTML = "Share on Tumblr";
         document.getElementById("tumblr_button_abc123").appendChild(tumblr_button);
     </script>
+    <script type="text/javascript">
+        var tumblr_button2 = document.createElement("a");
+        tumblr_button2.setAttribute("href", "http://www.tumblr.com/share/link?url=" + encodeURIComponent(page_url) + "&name=" + encodeURIComponent(page_name) + "&description=" + encodeURIComponent(page_description));
+        tumblr_button2.setAttribute("title", "Share on Tumblr");
+        tumblr_button2.setAttribute("style", "display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px; background:url('http://platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;");
+        tumblr_button2.innerHTML = "Share on Tumblr";
+        document.getElementById("tumblr_button_page").appendChild(tumblr_button2);
+    </script>
     <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
