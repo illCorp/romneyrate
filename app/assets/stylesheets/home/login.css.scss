@@ -30,7 +30,7 @@
  #description {
    margin-top: 40px;
    color: white;
-   margin-bottom: 40px
+   width: 500px;
  }
 
  #login_button {
@@ -44,6 +44,8 @@
    height: 50px;
    font-size: 1.1em;
    cursor: hand; cursor: pointer;
+   margin-left: 35px;
+   margin-top: -30px;
    
    .label_container {
      padding-top: 15px;
