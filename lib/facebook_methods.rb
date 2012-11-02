@@ -38,8 +38,9 @@ module FacebookMethods
     user = facebook_user
     if user
       begin
-        friend_ids = facebook_client.get_connections("me", "friends").collect {|item| item['id']}
-        return friend_ids.length
+        query = "SELECT friend_count FROM user WHERE uid = me()"
+        results = facebook_client.fql_query(query).last
+        return results['friend_count']
       rescue Koala::Facebook::APIError => e
         session['facebook_access_token'] = nil
         session[:last_seen] = nil
