@@ -84,6 +84,7 @@
 .rating_and_sharing {
   display: block;
   position: relative;
+  width: 300px;
 }
 
 #sharing {
@@ -186,3 +187,38 @@ img.thumb {
   margin-left: 0px;
 }
 
+#login_button {
+  background-color: white;
+  background-image: url('/assets/facebook-icon.png');
+  background-repeat: no-repeat;
+  background-position: 8px 8px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 50px;
+  font-size: 1.1em;
+  position: absolute;
+  left: 960px;
+  top: 270px;
+   
+  .label_container {
+    padding-top: 15px;
+    margin-left: 60px;
+  }
+   
+  .first_part {
+    color: #093a65;
+  }
+  .second_part {
+    color: red;
+  }
+  z-index: 500;
+}
+
+#login_subtext {
+  margin-top: 4px;
+  width: 300px;
+  color: white;
+  font-size: 0.8em;
+  text-align: center;
+}

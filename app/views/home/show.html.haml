@@ -1,7 +1,7 @@
 -content_for :head_scripts do
   %meta{:name => 'viewport', :content => 'initial-scale=1.0, user-scalable=no'}
   =stylesheet_link_tag '/assets/home/shared.css'
-  =stylesheet_link_tag '/assets/home/index.css'
+  =stylesheet_link_tag '/assets/home/show.css'
   :javascript
     window.FansOfRomney = #{@friend_likes.to_json};
     window.TotalFriendCount = #{@total_friends};
@@ -9,6 +9,12 @@
 
 #main_container
   #background
+  .login_container
+    #login_button
+      .label_container
+        %span.first_part Calculate your
+        %span.second_part Romney Rate
+    #login_subtext (remember, lower is better)
   #text_container
     #nicework
       ="Nice Work.  You can trust (almost) all of #{@u.name}'s friends."
@@ -37,7 +43,9 @@
 
   #hey_mitt_check_math Hey Mitt, Check our Math, it adds up!
       
-#logout Logout
+
+  
+
 
 =render :partial => 'footer'
 

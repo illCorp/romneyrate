@@ -8,9 +8,12 @@
       <li><g:plus action="share" annotation="bubble"></g:plus></li>
       <li><span id="tumblr_button_abc123"></span></li>
       <li><script type="IN/Share" data-url="http://www.whatsmyromneyrate.com/"></script></li>
+    %li
+      %a#vote_button{:href=>"http://www.barackobama.com/commit/"}
+        =image_tag asset_path('vote-obama-button.png')
   .footnote
-    %p This communication is not authorized by any candidate or candidate's committee.
-    %p A liberal labor of love by Mathew Ranauro, Sean Zehnder & Nathan Dills
+    %p
+      =raw "This communication is not authorized by any candidate or candidate's committee.<br/>A liberal labor of love by #{link_to 'Mathew Ranauro', 'http://www.meeps.com'}, #{link_to 'Sean Zehnder', 'http://www.meeps.com'} & Nathan Dills"
 
 -content_for :end_scripts do
   :plain

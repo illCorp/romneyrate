@@ -48,13 +48,12 @@ body {
 #text_container {
   z-index: 100;
   display: block;
-  height: 100%;
   position: absolute;
   left: 600px;
   top: 100px;
 }
 
-#logout {
+/*#logout {
   position: absolute;
   right: 6px;
   top: 6px;
@@ -64,14 +63,24 @@ body {
   font-weight: bold;
   padding: 6px 8px 6px 8px;
   border: 1px solid black;
-}
+}*/
 
 #footer .share {
   display: inline-block;
   position: relative;
   list-style-type: none;
   height: 40px;
-  width: 500px;
+  width: 630px;
+}
+
+#vote_button {
+  /*background: url("/assets/vote-obama-button.png");
+  background-repeat: no-repeat;*/
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -13px;
+  /*position:absolute;
+  left: 1000px;*/
 }
 
 #footer .share li {
@@ -82,7 +91,26 @@ body {
 }
 
 .footnote {
+  border-top: 1px solid gray;
   display: block;
   margin-top: -8px;
   padding-bottom: 20px;
+  margin: auto;
+  width: 600px;
+  position: relative;
+  
+  a, a:visited {
+    color: black;
+  }
+    
 }
+
+#nicework {
+  height: 18px;
+}
+
+#nicework .label {
+  display: none;
+  height: 18px;
+}
+
