@@ -28,7 +28,7 @@ Romneyrate::Application.routes.draw do
   
    match '/home/:action', :controller => 'home'
    
-  root to: 'home#index' 
+  root to: 'home#login' 
    
   # The priority is based upon order of creation:
   # first created -> highest priority.

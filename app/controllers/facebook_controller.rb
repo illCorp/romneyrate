@@ -21,7 +21,7 @@ class FacebookController < ApplicationController
       auth = JSON.parse(params[:authResponse]).with_indifferent_access
       session['facebook_access_token'] = auth[:accessToken]
       session[:last_seen] = Time.now
-      redirect_to '/'
+      redirect_to '/home/index'
     end
   end 
   

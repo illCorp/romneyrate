@@ -9,6 +9,14 @@
     %meta{:property=>'og:site_name', :content=>"Romney Rating"}
     %meta{:property=>'og:description', :content=>"#{@friend_likes.count} of my friends 'like' Mitt Romney. That's a #RomneyRate of only #{@romney_rate}% !!! How low is your RomneyRate?"}
     %meta{:property=>'fb:app_id', :content=> "#{FACEBOOK_CONFIG['app_id']}"}
+  -else
+    %meta{:property=>"og:image", :content=> image_path('facebook-share.png')}
+    %meta{:property=>'og:title', :content=> "What's My Romney Rating?"}
+    %meta{:property=>'og:type', :content=> 'website'}
+    %meta{:property=>'og:url', :content=> "http://www.whatsmyromneyrate.com/"}
+    %meta{:property=>'og:site_name', :content=>"Romney Rating"}
+    %meta{:property=>'og:description', :content=>"What percentage of your friends 'like' Mitt Romney? Find out what your RomneyRate is at www.whatsmyromneyrate.com"}
+    %meta{:property=>'fb:app_id', :content=> "#{FACEBOOK_CONFIG['app_id']}"}
 
 =render :partial => 'header'
 
