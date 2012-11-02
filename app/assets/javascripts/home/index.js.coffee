@@ -10,6 +10,7 @@ RomneyIndex =
     $('#logout').click((event)->
       FacebookLogin.logout()
     )
+    $('body').append($('<div id="hidden-resizer" style="visibility: hidden"></div>'))
     this.updateBarGraph(window.FansOfRomney.length,window.TotalFriendCount)
   updateBarGraph: (romney_fans, total_friends)->
     console.log("updateBarGraph...");
@@ -32,7 +33,8 @@ RomneyIndex =
     , 2000)
     
     jQuery({someValue: 0}).animate({someValue: pct}, {duration: 3000, easing: 'swing', step: ->
-      $('#percent_label').text("#{this.someValue.toFixed(2)}%")
+      txt = "#{this.someValue.toFixed(2)}"
+      $('.percent_number').text(txt)
     })
     
     jQuery({someValue: 0}).animate({someValue: total_friends}, {duration: 3000, easing: 'swing', step: ->

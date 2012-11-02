@@ -24,7 +24,9 @@
     .rating_and_sharing
       .rate_block
         .percent_box 
-          .percent#percent_label 0%
+          .percent#percent_label
+            .percent_number 0
+            .percent_sign %
         .label of your friends like Mitt Romney
       #sharing
         .share_buttons
@@ -50,7 +52,8 @@
 
     
       
-  #hey_mitt_check_math Hey Mitt, Check our Math, it adds up!
+  #hey_mitt_check_math
+    =image_tag image_path('clinton-knows-arithmetic.png')
 
 =render :partial => 'footer'
 
