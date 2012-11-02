@@ -26,8 +26,38 @@ body {
 #main_container {
   position: relative;
   display: block;
-  height: 721px;
+  height: 321px;
+  background-color: black;
+  color: white;
+  padding-top: 30px;
 }
+
+#text_container {
+  margin: auto;
+  width: 500px;
+    width: 430px;  
+    font-family: Arial;
+  .title {
+    line-height: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+#contact_us, #contact_us:visited {
+  border-radius: 8px;
+  padding: 14px 12px 14px 12px;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  width: 115px;
+  font-size: 1.2em;
+  text-align: center;
+  cursor: hand; cursor: pointer;
+  text-decoration: none;
+}
+
+
 
 #background {
   display: block;
@@ -44,75 +74,10 @@ body {
 #header, #footer {
   display: block;
   text-align: center;
+  margin: 10px;
 }
 
-#text_container {
-  z-index: 100;
-  display: block;
-  position: absolute;
-  left: 600px;
-  top: 90px;
-}
 
-/*#logout {
-  position: absolute;
-  right: 6px;
-  top: 6px;
-  border-radius: 10px;
-  background-color: rgba(200,200,200,0.5);
-  color: black;
-  font-weight: bold;
-  padding: 6px 8px 6px 8px;
-  border: 1px solid black;
-}*/
 
-#footer .share {
-  display: inline-block;
-  position: relative;
-  list-style-type: none;
-  height: 40px;
-  width: 630px;
-}
 
-#vote_button {
-  /*background: url("/assets/vote-obama-button.png");
-  background-repeat: no-repeat;*/
-  display: inline-block;
-  vertical-align: middle;
-  margin-top: -13px;
-  /*position:absolute;
-  left: 1000px;*/
-  cursor: hand; cursor: pointer;
-}
-
-#footer .share li {
-  float: left;
-  padding: 6px;
-  margin: 2px;
-  width: 74px;
-}
-
-.footnote {
-  border-top: 1px solid gray;
-  display: block;
-  margin-top: -8px;
-  padding-bottom: 20px;
-  margin: auto;
-  width: 600px;
-  position: relative;
-  
-  a, a:visited {
-    color: black;
-  }
-    
-}
-
-#nicework {
-  height: 18px;
-}
-
-#nicework .label {
-  display: none;
-  height: 18px;
-}
 

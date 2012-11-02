@@ -1,22 +1,2 @@
--content_for :head_scripts do
-  :plain
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=167465176727032";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    <script src="https://apis.google.com/js/plusone.js"></script>
-    <script type="text/javascript">
-        var tumblr_link_url = "http://www.whatsmyromneyrate.com/";
-        var tumblr_link_name = "Whats My Romney Rate?";
-        var tumblr_link_description = "Find out how many of your Facebook friends are fans of Romney on Facebook...Knowledge is power...";
-        var page_url = "";
-        var page_name = "";
-        var page_description = "";
-    </script>
-    
 #header
-  %img{:src=>asset_path("RR-header-image.png")}
+  %img{:src=>asset_path("illco-logo.png")}
