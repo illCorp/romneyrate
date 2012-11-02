@@ -56,5 +56,7 @@ class HomeController < ApplicationController
     render :json => {:success => true, :current_user => current_user.as_json(:authenticated)}
   end
   
+  def illco
+  end
   
 end

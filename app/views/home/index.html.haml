@@ -45,7 +45,7 @@
 
     #how_well_know
       .label 
-        = "So...Um...How well do you know these #{@friend_likes.count} Friends?"
+        = "So... Um... How well do you know these #{@friend_likes.count} Friends?"
       #thumbnails
         -@friend_likes.each do |friend|
           .thumb{:data => {:name => friend.name}}

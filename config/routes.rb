@@ -24,6 +24,8 @@ Romneyrate::Application.routes.draw do
     end
   end
   
+  resources :illco, :only => [:index]
+  
   match '/:permalink', :controller => 'home', :action => 'login'
   
    match '/home/:action', :controller => 'home'
