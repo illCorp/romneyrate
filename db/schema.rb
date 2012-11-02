@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102011631) do
+ActiveRecord::Schema.define(:version => 20121102152132) do
 
   create_table "facebook_friends", :force => true do |t|
     t.integer  "facebook_user_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20121102011631) do
     t.datetime "updated_at",  :null => false
     t.integer  "num_friends"
     t.float    "romney_rate"
+    t.string   "profile_url"
   end
 
   create_table "sharing_actions", :force => true do |t|

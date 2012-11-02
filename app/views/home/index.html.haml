@@ -48,7 +48,9 @@
         = "So...Um...How well do you know these #{@friend_likes.count} Friends?"
       #thumbnails
         -@friend_likes.each do |friend|
-          %img.thumb{:src => friend.image_url, :width => 50, :height => 50}
+          .thumb{:data => {:name => friend.name}}
+            %a{:href=>friend.profile_url}
+              %img.thumb{:src => friend.image_url, :width => 50, :height => 50}
 
     
       
@@ -61,6 +63,7 @@
 
 -content_for :end_scripts do
   =javascript_include_tag '/assets/home/index.js'
+  =javascript_include_tag '/assets/plugins/jquery.qtip-1.0.0-rc3.js'
   :plain
     <script type="text/javascript">
         var tumblr_button2 = document.createElement("a");

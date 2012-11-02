@@ -2,7 +2,6 @@
 #= require jquery_ujs
 #= require plugins/jquery.color
 #= require facebook
-#= require plugins/jquery.center
 
 RomneyIndex =
   total_friends_rect: null
@@ -44,7 +43,18 @@ RomneyIndex =
     jQuery({someValue: 0}).animate({someValue: romney_fans}, {duration: 3000, easing: 'swing', step: ->
       $('#romney_fans .count').text("#{Math.ceil(this.someValue)}")
     })
-    
+    $('div.thumb').each((e) ->
+      $(this).qtip({
+         content: $(this).data('name')
+         show: 'mouseover'
+         hide: 'mouseout'
+         position:
+           corner:
+             target: 'bottomMiddle'
+             tooltip: 'topMiddle'
+             
+      })
+    )
 
     
       

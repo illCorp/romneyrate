@@ -1,5 +1,5 @@
 class FacebookUser < ActiveRecord::Base
-  attr_accessible :uid, :name, :image_url, :raw_json
+  attr_accessible :uid, :name, :image_url, :raw_json, :profile_url
   has_many :sharing_actions
   has_and_belongs_to_many(:facebook_users,
       :join_table => "facebook_friends",
