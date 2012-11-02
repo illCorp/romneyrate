@@ -31,9 +31,9 @@
           %span.label Share Your Romney Rate
           %ul.share.left
             %li
-              .fb-like{:data => {:href=>"http://www.whatsmyromneyrate.com/", :send=>"false", :width=>"450", :'show-faces'=>"false", :layout => 'button_count'}}
+              .fb-like{:data => {:href=>"http://www.whatsmyromneyrate.com/#{@u.permalink}", :send=>"false", :width=>"450", :'show-faces'=>"false", :layout => 'button_count'}}
             %li
-              %a.twitter-share-button{:href=>"https://twitter.com/share", :data => {:lang=>"en"}} Tweet
+              %a{href:"https://twitter.com/share", class:"twitter-share-button", :data => {text:"#{@friend_likes.count} of my friends 'like' Mitt Romney. That's a #RomneyRate of only #{100*@friend_likes.count/@total_friends}% !!! How low is your RomneyRate?" , size:"medium"}} Tweet
             /:plain
             /<li><g:plus action="share" annotation="bubble"></g:plus></li>
           %ul.share.right
@@ -46,7 +46,7 @@
         = "So...Um...How well do you know these #{@friend_likes.count} Friends?"
       #thumbnails
         -@friend_likes.each do |friend|
-          %img.thumb{:src => friend['pic_big'], :width => 50, :height => 50}
+          %img.thumb{:src => friend.image_url, :width => 50, :height => 50}
 
     
       

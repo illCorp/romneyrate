@@ -6,9 +6,10 @@ Romneyrate::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
   
-  config.cache_store = :dalli_store, 'dev-cache.vzvdas.0001.use1.cache.amazonaws.com:11211',
-      { :namespace => "romneyrate_szehnder", :expires_in => 1.day, :compress => true }
-
+  #config.after_initialize do
+  #  config.cache_store = :dalli_store, 'dev-cache.vzvdas.0001.use1.cache.amazonaws.com:11211',
+  #  { :namespace => "romneyrate_szehnder", :expires_in => 1.day, :compress => true }
+  #end
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 

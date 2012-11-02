@@ -11,17 +11,27 @@ class HomeController < ApplicationController
       current_user = facebook_user
       @friend_likes = facebook_friend_likes
       @friend_likes = [] if (@friend_likes.nil?)
-      #foo = []
-      #if @friend_likes.count>0
-      #  100.times do |i|
-      #    foo << @friend_likes[i%@friend_likes.count]
-      #  end
-      #end
-      #@friend_likes = foo
       @total_friends = facebook_friend_count
+      current_user.facebook_users = []
+      current_user.save
+      @friend_likes.each do |friend|
+        FacebookFriend.create(:facebook_user_id => current_user.id, :friend_id => friend.id)
+      end
+      current_user.num_friends = @total_friends
+      current_user.romney_rate = (100.00*@friend_likes.count/@total_friends+0.00).round(2)
+      debugger
+      current_user.save
       redirect_to :action => :login if current_user.nil?
     end
     @current_user = current_user
+  end
+  
+  def show
+    id = params[:permalink].alphadecimal
+    @u = FacebookUser.find(id)
+    @friend_likes = @u.facebook_users
+    @total_friends = @u.num_friends
+    debugger
   end
   
   def sorry

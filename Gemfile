@@ -15,6 +15,8 @@ gem 'unicorn'
 gem 'koala'
 gem 'mailcatcher', :group => [:development, :szehnder, :test]
 gem 'dalli'
+gem 'bitly'
+gem 'alphadecimal'
 
 group :development, :szehnder, :test, :staging do 
   gem 'linecache19', '0.5.13'

@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121101170054) do
+ActiveRecord::Schema.define(:version => 20121102011631) do
+
+  create_table "facebook_friends", :force => true do |t|
+    t.integer  "facebook_user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "facebook_users", :force => true do |t|
     t.string   "uid"
@@ -22,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20121101170054) do
     t.text     "raw_json"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "num_friends"
+    t.float    "romney_rate"
   end
 
   create_table "sharing_actions", :force => true do |t|

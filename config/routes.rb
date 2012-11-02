@@ -1,6 +1,6 @@
 Romneyrate::Application.routes.draw do
 
-  root to: 'home#index'  
+   
  
   resources :facebook, :only => [] do
     collection do
@@ -24,8 +24,11 @@ Romneyrate::Application.routes.draw do
     end
   end
   
+  match '/:permalink', :controller => 'home', :action => 'show'
   
    match '/home/:action', :controller => 'home'
+   
+  root to: 'home#index' 
    
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,47 @@
+-content_for :head_scripts do
+  %meta{:name => 'viewport', :content => 'initial-scale=1.0, user-scalable=no'}
+  =stylesheet_link_tag '/assets/home/shared.css'
+  =stylesheet_link_tag '/assets/home/index.css'
+  :javascript
+    window.FansOfRomney = #{@friend_likes.to_json};
+    window.TotalFriendCount = #{@total_friends};
+=render :partial => 'header'
+
+#main_container
+  #background
+  #text_container
+    #nicework
+      ="Nice Work.  You can trust (almost) all of #{@u.name}'s friends."
+
+    .bar_block#romney_fans
+      #romney_fans_div
+      .count 0
+      .label Friends that like Mitt Romney
+    .bar_block#total_friends
+      #total_friends_div
+      .count 0
+      .label Total Friends
+    .rating_and_sharing
+      .rate_block
+        .percent_box 
+          .percent#percent_label 0%
+        .label 
+          = "of #{@u.name}'s friends like Mitt Romney"
+
+    #how_well_know
+      .label 
+        = "So...Um...How well do you know these #{@friend_likes.count} Friends?"
+      #thumbnails
+        -@friend_likes.each do |friend|
+          %img.thumb{:src => friend.image_url, :width => 50, :height => 50}
+
+  #hey_mitt_check_math Hey Mitt, Check our Math, it adds up!
+      
+#logout Logout
+
+=render :partial => 'footer'
+
+#fb-root
+
+-content_for :end_scripts do
+  =javascript_include_tag '/assets/home/show.js'

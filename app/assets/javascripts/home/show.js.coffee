@@ -36,7 +36,6 @@ RomneyIndex =
       $('#romney_fans .count').text("#{Math.ceil(this.someValue)}")
     })
     
-    
 
     
       
