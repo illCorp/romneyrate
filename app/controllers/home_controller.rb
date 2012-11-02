@@ -20,7 +20,6 @@ class HomeController < ApplicationController
       current_user.num_friends = @total_friends
       current_user.romney_rate = (100.00*@friend_likes.count/@total_friends+0.00).round(2)
       current_user.save
-      @romney_rate = current_user.romney_rate
       redirect_to :action => :login if current_user.nil?
     end
     @current_user = current_user
@@ -31,6 +30,7 @@ class HomeController < ApplicationController
     @u = FacebookUser.find(id)
     @friend_likes = @u.facebook_users
     @total_friends = @u.num_friends
+    @romney_rate = @u.romney_rate
   end
   
   def sorry
