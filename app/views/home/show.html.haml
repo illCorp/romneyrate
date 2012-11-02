@@ -46,7 +46,10 @@
         = "So...Um...How well do you know these #{@friend_likes.count} Friends?"
       #thumbnails
         -@friend_likes.each do |friend|
-          %img.thumb{:src => friend.image_url, :width => 50, :height => 50}
+          .thumb{:data => {:name => friend.name}}
+            %a{:href=>friend.profile_url}
+              %img.thumb{:src => friend.image_url, :width => 50, :height => 50}
+      
 
   #hey_mitt_check_math Hey Mitt, Check our Math, it adds up!
       

@@ -27,6 +27,7 @@
 %body{:style => 'width: 100%; height: 100%'}
   =yield
   =yield :end_scripts
+  =javascript_include_tag '/assets/plugins/jquery.qtip-1.0.0-rc3.js'
   :plain
     <script type="text/javascript">
 
