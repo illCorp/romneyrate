@@ -9,20 +9,25 @@ class HomeController < ApplicationController
     session[:last_seen] = Time.now
     if (facebook_authorized?)
       current_user = facebook_user
+      
       @friend_likes = facebook_friend_likes
       @friend_likes = [] if (@friend_likes.nil?)
       @total_friends = facebook_friend_count
-      current_user.facebook_users = []
-      current_user.save
-      @friend_likes.each do |friend|
-        FacebookFriend.create(:facebook_user_id => current_user.id, :friend_id => friend.id)
+      if current_user.nil?
+        redirect_to :action => :login 
+      else
+        current_user.facebook_users = []
+        current_user.save
+        @friend_likes.each do |friend|
+          FacebookFriend.create(:facebook_user_id => current_user.id, :friend_id => friend.id)
+        end
+        current_user.num_friends = @total_friends
+        current_user.romney_rate = (100.00*@friend_likes.count/@total_friends+0.00).round(2)
+        current_user.save
+        redirect_to :action => :login if current_user.nil?
+        @current_user = current_user        
       end
-      current_user.num_friends = @total_friends
-      current_user.romney_rate = (100.00*@friend_likes.count/@total_friends+0.00).round(2)
-      current_user.save
-      redirect_to :action => :login if current_user.nil?
     end
-    @current_user = current_user
   end
   
   def show
