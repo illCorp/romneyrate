@@ -31,11 +31,7 @@ class HomeController < ApplicationController
   end
   
   def show
-    id = params[:permalink].alphadecimal
-    @u = FacebookUser.find(id)
-    @friend_likes = @u.facebook_users
-    @total_friends = @u.num_friends
-    @romney_rate = @u.romney_rate
+    
   end
   
   def sorry
@@ -45,6 +41,13 @@ class HomeController < ApplicationController
   end
   
   def login
+    if params[:permalink]
+      id = params[:permalink].alphadecimal
+      @u = FacebookUser.find(id)
+      @friend_likes = @u.facebook_users
+      @total_friends = @u.num_friends
+      @romney_rate = @u.romney_rate
+    end
     session['facebook_access_token'] = nil
     session[:last_seen] = nil
   end

@@ -24,7 +24,7 @@ Romneyrate::Application.routes.draw do
     end
   end
   
-  match '/:permalink', :controller => 'home', :action => 'show'
+  match '/:permalink', :controller => 'home', :action => 'login'
   
    match '/home/:action', :controller => 'home'
    
