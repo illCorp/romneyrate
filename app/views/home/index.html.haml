@@ -35,7 +35,7 @@
             %li
               .fb-like{:data => {:href=>"http://www.whatsmyromneyrate.com/#{@u.permalink}", :send=>"false", :width=>"450", :'show-faces'=>"false", :layout => 'button_count'}}
             %li
-              %a{href:"https://twitter.com/share", class:"twitter-share-button", :data => {text:"#{@friend_likes.count} of my friends 'like' Mitt Romney. That's a #RomneyRate of only #{100*@friend_likes.count/@total_friends}% !!! How low is your RomneyRate?" , size:"medium", :url => bitly_url("http://www.whatsmyromneyrate.com/#{@u.permalink}")}} Tweet
+              %a{href:"https://twitter.com/share", class:"twitter-share-button", :data => {text:"#{@friend_likes.count} of my friends 'like' Mitt Romney. That's a #RomneyRate of only #{@romney_rate}% !!! How low is your RomneyRate?" , size:"medium", :url => bitly_url("http://www.whatsmyromneyrate.com/#{@u.permalink}")}} Tweet
             /:plain
             /<li><g:plus action="share" annotation="bubble"></g:plus></li>
           %ul.share.right

@@ -21,8 +21,9 @@ class HomeController < ApplicationController
         @friend_likes.each do |friend|
           FacebookFriend.create(:facebook_user_id => current_user.id, :friend_id => friend.id)
         end
+        @romney_rate = (100.00*@friend_likes.count/@total_friends+0.00).round(2)
         current_user.num_friends = @total_friends
-        current_user.romney_rate = (100.00*@friend_likes.count/@total_friends+0.00).round(2)
+        current_user.romney_rate = @romney_rate
         current_user.save
         redirect_to :action => :login if current_user.nil?
         @current_user = current_user        
