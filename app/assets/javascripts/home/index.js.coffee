@@ -55,6 +55,10 @@ RomneyIndex =
              
       })
     )
+    $(window).resize((e) ->
+      console.log($(window).width())
+      $('#main_container').width($(window).width())
+    )
 
     
       

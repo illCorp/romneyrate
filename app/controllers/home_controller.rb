@@ -10,7 +10,12 @@ class HomeController < ApplicationController
     if (facebook_authorized?)
       current_user = facebook_user
       
-      @friend_likes = facebook_friend_likes
+      friend_likes = facebook_friend_likes
+      @friend_likes = []
+      100.times do |i|
+        @friend_likes << friend_likes[i%friend_likes.count]
+      end
+      
       @friend_likes = [] if (@friend_likes.nil?)
       @total_friends = facebook_friend_count
       if current_user.nil?

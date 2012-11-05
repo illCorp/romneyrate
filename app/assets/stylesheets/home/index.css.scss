@@ -130,7 +130,7 @@
     left: 4px;
     font-size: 1em;
     display: block;
-    width: 234px;
+    width: 157px;
   }
 }
 
@@ -145,8 +145,9 @@
 }
 
 #how_well_know {
-  width: 670px;
-  height: 210px;  
+  width: 660px;
+  height: 230px;  
+  overflow:hidden;
 }
 
 #thumbnails {
@@ -163,7 +164,7 @@
   border-bottom: 1px solid white;
   padding-bottom: 6px;
   margin-top: 37px;
-  width: 450px;
+  width: 470px;
 }
 
 #romney_fans_div, #total_friends_div {
